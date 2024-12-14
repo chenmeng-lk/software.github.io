@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>内容介绍</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: url('./images/background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+            text-align: center;
+        }
+
+        .section {
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 800px;
+            box-sizing: border-box;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto 15px;
+        }
+
+        ul {
+            margin: 10px 0;
+            padding-left: 0;
+            list-style-position: inside;
+            text-align: center;
+        }
+
+        .note {
+            color: #555;
+            font-style: italic;
+        }
+
+        .download {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .download a {
+            display: inline-block;
+            background: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .download a:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>内容介绍</h1>
+    <div class="section">
+        <h2>玩家登录</h2>
+        <p>本游戏玩家可以进行注册登录，玩家数据会保存在云端数据库中，以便下次可以继续游戏。游戏中玩家数据由排行榜的形式呈现出来，同时也支持游客登录，游客登录数据会保存在本地，但玩家不能登上排行榜。</p>
+        <img src="./images/注册.png" alt="注册" width="400" height="280">
+        <img src="./images/登录.png" alt="登录" width="400" height="280">
+        <img src="./images/排行榜.png" alt="排行榜" width="400" height="280">
+        <p>登录成功后玩家可游玩本游戏。游戏中，玩家可以通过控制人物移动，最终到达终点，实现通关，在通关过程中，可以通过拾取cherries道具，在商店面板中购买相应的技能以供后续关卡的通关。</p>
+        <p>游戏中主要设计了八个关卡，其中关卡1为导引关卡，关卡2为基础关卡，关卡3-6为根据相应技能设计对应关卡，关卡7-8为综合关卡。以下为各个关卡的展示。</p>
+    </div>
+    <div class="section">
+        <h2>关卡1：导引关卡</h2>
+        <img src="./images/1.png" alt="关卡1截图" width="400" height="280">
+        <p>向玩家提示游戏的基本操作和死亡机制。</p>
+    </div>
+    <div class="section">
+        <h2>关卡2：基础关卡</h2>
+        <img src="./images/2.png" alt="关卡2截图" width="400" height="300">
+        <p>利用人物基础行为即可找到通关路线。</p>
+    </div>
+    <div class="section">
+        <h2>关卡3：二段跳技能</h2>
+        <img src="./images/3.png" alt="关卡3截图" width="400" height="270">
+        <p>仅凭人物基础行为无法通关，使用<span class="note">二段跳技能</span>才可通关。</p>
+    </div>
+    <div class="section">
+        <h2>关卡4：闪现技能</h2>
+        <img src="./images/4.png" alt="关卡4截图" width="400" height="270">
+        <p>难度高于第三关，需要使用<span class="note">闪现技能</span>才可通关。</p>
+        <img src="./images/闪现实现.gif" alt="关卡4闪现实现" width="400" height="270">
+    </div>
+    <div class="section">
+        <h2>关卡5：疾跑技能与陷阱</h2>
+        <img src="./images/5.png" alt="关卡5截图" width="400" height="280">
+        <p>通关后解锁<span class="note">疾跑技能</span>，才能避开陷阱并获取足够的 cherries。</p>
+    </div>
+    <div class="section">
+        <h2>关卡6：冰川场景与名刀技能</h2>
+        <img src="./images/6.png" alt="关卡6截图" width="400" height="180">
+        <p>人物在冰川场景移动会滑动，触碰陷阱时需使用<span class="note">名刀技能</span>，实现死亡免疫，才可通关。</p>
+    </div>
+    <div class="section">
+        <h2>关卡7：综合关卡与蜜蜂 Boss</h2>
+        <img src="./images/7.png" alt="关卡7截图" width="400" height="290">
+        <p>需要解锁所有技能，通过蜜蜂 Boss 的干扰：</p>
+        <ul>
+            <li>Boss 碰撞人物会触发人物死亡。</li>
+            <li>Boss 距离人物近时会追赶人物。</li>
+            <li>Boss 碰触陷阱会失去 20HP（总 HP 100），并摧毁陷阱地形。</li>
+        </ul>
+        <p>玩家可利用 Boss 摧毁陷阱，寻找简便的通关路径。</p>
+    </div>
+    <div class="section">
+        <h2>关卡8：画面变黑与护目镜技能</h2>
+        <img src="./images/8.png" alt="关卡8截图" width="400" height="295">
+        <p>场景逐渐变黑，需解锁<span class="note">护目镜技能</span>恢复亮度：</p>
+        <ul>
+            <li>未解锁护目镜技能时，画面较暗，仅人物周围区域较亮。</li>
+            <li>正确通关难度较大。</li>
+        </ul>
+    </div>
+    <div class="section">
+        <h2>总结</h2>
+        <p>游戏各关卡实现功能完整，场景设计与人物行为、技能设计联系紧密，满足正常需求。</p>
+    </div>
+    <div class="section download">
+        <h2>下载链接</h2>
+        <p>我们的跑酷游戏为可执行程序.exe格式，玩家可下载到自己的电脑上进行游玩。</p>
+        <a href="https://gitee.com/liao-kui/software-engineering-practice-522/raw/master/%E8%B7%91%E9%85%B7522setup.exe"
+            target="_blank">点击这里下载游戏</a>
+    </div>
+</body>
+
+</html>
